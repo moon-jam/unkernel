@@ -541,7 +541,7 @@ static void env_set(char **env, int *n, char *kv)
 	env[(*n)++] = kv;
 }
 
-/* Every signal at its default and none blocked, as login(1) leaves the shell. */
+/* Every signal at its default and none blocked, whatever init passed on. */
 static void default_signals(void)
 {
 	struct sigaction sa = { .sa_handler = SIG_DFL };
